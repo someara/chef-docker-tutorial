@@ -7,7 +7,7 @@ describe 'chef-docker-tutorial::hello' do
 
   it 'compiles the resource_collection' do
     expect(chef_run).to create_docker_service('default')
-    expect(chef_run).to pull_docker_image('hello-world')
-    expect(chef_run).to run_docker_container('hello-world')
+    expect(chef_run).to pull_if_missing_docker_image('hello-world')
+    expect(chef_run).to run_if_missing_docker_container('hello-world')
   end
 end

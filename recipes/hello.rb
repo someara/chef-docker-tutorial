@@ -3,9 +3,9 @@ docker_service 'default' do
 end
 
 docker_image 'hello-world' do
-  action :pull
+  action :pull_if_missing
 end
 
 docker_container 'hello-world' do
-  action :run
+  action :run_if_missing
 end
