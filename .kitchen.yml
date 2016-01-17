@@ -1,0 +1,25 @@
+---
+driver_plugin: vagrant
+
+driver_config:
+  customize:
+    cpus: 2
+    memory: 1024
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: true
+
+verifier:
+  name: inspec
+
+platforms:
+- name: ubuntu-15.04
+  driver_config:
+    box: opscode-ubuntu-15.04
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-15.04_chef-provisionerless.box
+
+suites:
+- name: default
+  run_list:
+  - recipe[chef-docker-tutorial::default]
