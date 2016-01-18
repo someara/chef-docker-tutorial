@@ -11,6 +11,6 @@ docker_container 'an_echo_server' do
   repo 'alpine'
   tag '3.1'
   command 'nc -ll -p 7 -e /bin/cat'
-  port '7:7'
+  port "#{node[:ipaddress]}:7:7"
   action :run
 end

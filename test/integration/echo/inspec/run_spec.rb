@@ -8,7 +8,7 @@ describe command('docker ps -af "name=an_echo_server"') do
   its(:stdout) { should match(/an_echo_server$/) }
 end
 
-describe command('echo "hi" | nc localhost 7') do
+describe command('netstat -anp | grep -i docker-proxy') do
   its(:exit_status) { should eq 0 }
-  its(:stdout) { should match(/^hi$/) }
+  its(:stdout) { should_not match(/:::7/) }
 end

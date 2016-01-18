@@ -16,7 +16,7 @@ describe 'chef-docker-tutorial::echo' do
       repo: 'alpine',
       tag: '3.1',
       command: 'nc -ll -p 7 -e /bin/cat',
-      port: '7:7'
+      port: /.*:7:7/
     )
   end
 end
