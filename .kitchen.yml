@@ -27,3 +27,7 @@ suites:
 - name: hello
   run_list:
   - recipe[chef-docker-tutorial::hello]
+
+- name: echo
+  run_list:
+  - recipe[chef-docker-tutorial::echo]
