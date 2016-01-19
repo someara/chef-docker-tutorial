@@ -16,7 +16,7 @@ file '/bob/Dockerfile' do
 end
 
 file '/bob/file' do
-  content "bob was here\n"
+  content "bob was not here\n"
   action :create
 end
 
